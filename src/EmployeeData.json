@@ -1,0 +1,73 @@
+[
+  {
+    "id": 1,
+    "name": "Stefano Hallore",
+    "designation": "Health Coach",
+    "gender": "male",
+    "department": "sales",
+    "Date_Hired": "26/12/22",
+    "email": "shallor@gmail.com",
+    "phone": "1234567890",
+    "availability": "active"
+  },
+
+  {
+    "id": 2,
+    "name": "Stefano Hallore",
+    "designation": "Health Coach",
+    "gender": "male",
+    "department": "sales",
+    "Date_Hired": "26/12/22",
+    "email": "shallor@gmail.com",
+    "phone": "1234567890",
+    "availability": "unverified"
+  },
+
+  {
+    "id": 3,
+    "name": "Stefano Hallore",
+    "designation": "Health Coach",
+    "gender": "male",
+    "department": "sales",
+    "Date_Hired": "26/12/22",
+    "email": "shallor@gmail.com",
+    "phone": "1234567890",
+    "availability": "inactive"
+  },
+
+  {
+    "id": 4,
+    "name": "Stefano Hallore",
+    "designation": "Health Coach",
+    "gender": "female",
+    "department": "sales",
+    "Date_Hired": "26/12/22",
+    "email": "shallor@gmail.com",
+    "phone": "1234567890",
+    "availability": "unverified"
+  },
+
+  {
+    "id": 5,
+    "name": "Stefano Hallore",
+    "designation": "Health Coach",
+    "gender": "male",
+    "department": "sales",
+    "Date_Hired": "26/12/22",
+    "email": "shallor@gmail.com",
+    "phone": "1234567890",
+    "availability": "inactive"
+  },
+
+  {
+    "id": 6,
+    "name": "Stefano Hallore",
+    "designation": "Health Coach",
+    "gender": "male",
+    "department": "sales",
+    "Date_Hired": "26/12/22",
+    "email": "shallor@gmail.com",
+    "phone": "1234567890",
+    "availability": "unverified"
+  }
+]
