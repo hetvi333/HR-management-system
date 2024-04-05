@@ -11,7 +11,7 @@ const Toggle = () => {
     setGridIcon(!gridIcon);
   };
   return (
-    <div className="bg-slate-200 p-3 rounded-lg">
+    <div className="bg-slate-200 px-3 py-2 rounded-lg">
       <button onClick={toggleIcon}>
         {gridIcon ? <CiGrid2H /> : <IoGridOutline />}
       </button>

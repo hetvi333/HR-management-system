@@ -66,7 +66,7 @@ const Sidebar = () => {
             onClick={() => setIsOpen(!isOpen)}
             className="p-2 h-10 rounded-lg bg-gray-100 hover:bg-gray-300"
           >
-            {isOpen ? <FaChevronRight /> : <FaChevronLeft />}
+            {isOpen ? <FaChevronLeft />  : <FaChevronRight />}
           </button>
         </div>
         <ul className="flex-1 flex-col px-3 gap-4">

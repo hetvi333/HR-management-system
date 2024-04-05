@@ -22,10 +22,21 @@ const Employee = () => {
   return (
     <>
       <section>
-        <section className=" absolute z-20">{open && <EmpData open={open} onClose={()=>{setOpen(false)}}/>}</section>
+        <section className=" absolute z-20">
+          {open && (
+            <EmpData
+              open={open}
+              onClose={() => {
+                setOpen(false);
+              }}
+            />
+          )}
+        </section>
 
-        <div className=" flex justify-between items-center p-8">
-          <h1 className="font-bold text-2xl">Employees</h1>
+        <div className=" flex justify-between flex-col-reverse sm:flex-row items-center p-8">
+          <h1 className="font-bold text-xl sm:text-2xl text-center py-2">
+            Employees Details
+          </h1>
           <div className="flex  gap-5">
             <button
               onClick={addNew}
@@ -41,7 +52,7 @@ const Employee = () => {
         </div>
       </section>
 
-      <section className="px-8 pb-8">
+      <section className="">
         {userProfile ? (
           <EmpDetails data={empData} />
         ) : (

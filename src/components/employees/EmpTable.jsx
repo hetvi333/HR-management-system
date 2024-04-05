@@ -8,8 +8,8 @@ const EmpTable = (props) => {
   // console.log(data);
   return (
     <>
-      <div className="p-4 overflow-x-scroll w-1/2">
-        <table>
+      <div className="p-4 w-3/4 ">
+        <table className="w-full">
           {/* header */}
           <thead className=" uppercase bg-yellow-500">
             <tr>
@@ -25,31 +25,37 @@ const EmpTable = (props) => {
           </thead>
 
           {/* body */}
-          <tbody>
-            {data.map((user, id) => (
-              <tr key={id} className="bg-blue-200 text-center even:bg-blue-100">
-                <td className="py-3">{id + 1}</td>
-                <td>{user.name}</td>
-                <td>{user.email}</td>
-                <td>{user.gender}</td>
-                <td>{user.designation}</td>
-                <td>{user.department}</td>
+          <tbody className="overflow-scroll">
+            {data &&
+              data.map((user, id) => (
+                <tr
+                  key={id}
+                  className="bg-blue-200 text-center even:bg-blue-100"
+                >
+                  <td className="py-3">{id + 1}</td>
+                  <td>{user.name}</td>
+                  <td>{user.email}</td>
+                  <td>{user.gender}</td>
+                  <td>{user.designation}</td>
+                  <td>{user.department}</td>
 
-                <td>
-                  <EmpStatus availability={user.availability} />
-                </td>
-                <td>
-                  <Link to={`/Employee/${user.id}`}>
-                    <button className=" text-blue-500  hover:text-blue-900 ">
-                      <IoOpenOutline className=" w-7 h-7 font-bold" />
-                    </button>
-                  </Link>
-                </td>
-              </tr>
-            ))}
+                  <td>
+                    <EmpStatus availability={user.availability} />
+                  </td>
+                  <td>
+                    <Link to={`/Employee/${user.id}`}>
+                      <button className=" text-blue-500  hover:text-blue-900 ">
+                        <IoOpenOutline className=" w-7 h-7 font-bold" />
+                      </button>
+                    </Link>
+                  </td>
+                </tr>
+              ))}
           </tbody>
         </table>
       </div>
+
+      
     </>
   );
 };
