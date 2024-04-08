@@ -1,12 +1,8 @@
 import React from "react";
 
-// import logo
-import profile from "../images/Avatar6-ranking.png";
-
 // react icons
 import { IoMdSearch } from "react-icons/io";
-import { MdDarkMode, MdOutlineLightMode } from "react-icons/md";
-import { IoSettings } from "react-icons/io5";
+
 
 const Navbar = () => {
   return (

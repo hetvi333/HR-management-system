@@ -34,12 +34,12 @@ const Employee = () => {
       <div className="flex flex-col items-center sm:flex-row justify-between px-3 py-[5px]">
         <h1 className="text-2xl my-2 font-semibold">Employees</h1>
         <div>
-          <button className="bg-slate-100 py-1 px-5 rounded-md font-semibold hover:bg-indigo-200">
+          <button className="bg-slate-100 py-2 px-5 rounded-md font-semibold hover:bg-indigo-200">
             View more
           </button>
         </div>
       </div>
-      {/* <hr /> */}
+  
       <div className="px-3 py-3">
         <div>
           {employee.map((emp, i) => (

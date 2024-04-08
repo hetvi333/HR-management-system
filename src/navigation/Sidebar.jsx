@@ -11,9 +11,13 @@ import {
 import { FaCalendarCheck, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { FaUser } from "react-icons/fa6";
 import { SiSimpleanalytics } from "react-icons/si";
+import { ThemeContext } from "../contexts/ThemeContext";
 
 const Sidebar = () => {
+  const { toggle, toggleFunction } = React.useContext(ThemeContext);
+
   const [isOpen, setIsOpen] = useState(false);
+  const [theme, setTheme] = useState(false);
 
   const sideMenu = [
     {
@@ -39,19 +43,6 @@ const Sidebar = () => {
     },
   ];
 
-  const Mode = [
-    {
-      name: "LightMode",
-      link: "",
-      Icon: MdOutlineLightMode,
-    },
-    {
-      name: "DarkMode",
-      link: "",
-      Icon: MdDarkMode,
-    },
-  ];
-
   return (
     <div className="h-screen sticky top-0">
       <nav className="h-full flex flex-col bg-white border-r shadow-sm">
@@ -64,9 +55,9 @@ const Sidebar = () => {
           />
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="p-2 h-10 rounded-lg bg-gray-100 hover:bg-gray-300"
+            className="p-3 h-12 rounded-lg bg-gray-100 hover:bg-indigo-50 hover:text-indigo-800"
           >
-            {isOpen ? <FaChevronLeft />  : <FaChevronRight />}
+            {isOpen ? <FaChevronLeft /> : <FaChevronRight />}
           </button>
         </div>
         <ul className="flex-1 flex-col px-3 gap-4">
@@ -77,7 +68,7 @@ const Sidebar = () => {
                 <Link to={menu.link}>
                   <div className="relative flex items-center py-2 px-3 my-1 font-medium rounded-md cursor-pointer transition-colors group hover:bg-indigo-50 hover:text-indigo-800">
                     <span>
-                      <Icon/>
+                      <Icon />
                     </span>
                     <span
                       className={`overflow-hidden transition-all ${
@@ -100,36 +91,30 @@ const Sidebar = () => {
           })}
         </ul>
 
-        <ul className="flex flex-col px-1 mx-2 border-t bg-slate-500 rounded-md">
-          {Mode.map((menu, i) => {
-            const Icon = menu.Icon;
-            return (
-              <li key={i}>
-                <Link to={menu.link}>
-                  <div className="relative flex items-center py-2 px-3 my-1 font-medium rounded-md cursor-pointer transition-colors group hover:bg-indigo-50 hover:text-indigo-800 bg-slate-200">
-                    <span>
-                      <Icon className="w-4 h-4" />
-                    </span>
-                    <span
-                      className={`overflow-hidden transition-all ${
-                        isOpen ? " w-40 ml-3" : "w-0"
-                      }`}
-                    >
-                      {menu.name}
-                    </span>
-                    {!isOpen && (
-                      <div
-                        className={`absolute left-full rounded-md px-2 py-1 ml-6 bg-indigo-300 text-indigo-800 text-sm invisible opacity-20 -translate-x-3 transition-all group-hover:visible group-hover:opacity-100 group-hover:translate-x-0`}
-                      >
-                        {menu.name}
-                      </div>
-                    )}
-                  </div>
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
+        <div className="relative flex items-center p-3 mx-auto  font-medium rounded-md cursor-pointer transition-colors group hover:bg-indigo-50 hover:text-indigo-800 bg-slate-100">
+          <span onClick={toggleFunction}>
+            {toggle ? (
+              <MdOutlineLightMode size={22} />
+            ) : (
+              <MdDarkMode size={22} />
+            )}
+          </span>
+          <span
+            className={`overflow-hidden transition-all ${
+              isOpen ? " w-40 ml-3" : "w-0"
+            } `}
+          >
+            {toggle ? "LightMode" : "DarkMode"}
+          </span>
+          {!isOpen && (
+            <div
+              className={`absolute left-full rounded-md px-2 py-1 ml-6 bg-indigo-300 text-indigo-800 text-sm invisible opacity-20 -translate-x-3 transition-all group-hover:visible group-hover:opacity-100 group-hover:translate-x-0`}
+            >
+              {toggle ? "LightMode" : "DarkMode"}
+            </div>
+          )}
+        </div>
+
         <div className="flex gap-3 p-2">
           <img
             src={profile}

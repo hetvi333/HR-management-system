@@ -3,10 +3,12 @@ import Data from "../components/dashboard/Data";
 import Employee from "../components/dashboard/Employee";
 import EmployeeData from "../components/dashboard/EmployeeData";
 
+
 const Dashboard = () => {
+
   return (
     <div>
-      <section>
+      <section >
         <div className=" flex flex-col justify-center items-center py-5">
           <h1 className=" font-bold text-2xl">DASHBOARD</h1>
           <p className=" font-semibold text-yellow-500">
@@ -14,19 +16,6 @@ const Dashboard = () => {
           </p>
         </div>
       </section>
-
-      {/* <section className="grid grid-cols-3 gap-3 px-8 mb-3">
-        <div className="grid col-span-3 lg:col-span-2">
-          <Data />
-        </div>
-        <div className="col-span-3 lg:col-span-1">
-          <Employee />
-        </div>
-      </section>
-
-      <section className="grid grid-cols-1 md:grid-cols-3 gap-3 px-8">
-        <EmployeeData />
-      </section> */}
 
       <section className="px-3 py-5">
         <section className="p-3">

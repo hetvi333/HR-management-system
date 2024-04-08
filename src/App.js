@@ -1,12 +1,13 @@
+import React from "react";
 import "./App.css";
 import AppRoutes from "./AppRoutes";
-import EmpData from "./components/employees/EmpData";
+import { ThemeContext } from "./contexts/ThemeContext";
 
 function App() {
+  const { toggle } = React.useContext(ThemeContext);
   return (
-    <div className="App bg-purple-50">
+    <div className={`${toggle ? "bg-purple-900" : "bg-purple-50"}`}>
       <AppRoutes />
-      {/* <EmpData /> */}
     </div>
   );
 }

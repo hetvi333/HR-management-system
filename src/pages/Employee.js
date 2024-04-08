@@ -52,7 +52,7 @@ const Employee = () => {
         </div>
       </section>
 
-      <section className="">
+      <section className="p-8">
         {userProfile ? (
           <EmpDetails data={empData} />
         ) : (
