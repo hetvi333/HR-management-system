@@ -1,19 +1,38 @@
-import React from "react";
-
-// react icons
+import React, { useContext, useState } from "react";
+import { ThemeContext } from "../contexts/ThemeContext";
 import { IoMdSearch } from "react-icons/io";
+import { CiSettings } from "react-icons/ci";
+import profile from "../images/Avatar6-ranking.png";
 
-
-const Navbar = () => {
+const Navbar = ({ togglePenal }) => {
+  const { toggle } = useContext(ThemeContext);
   return (
-    <nav className="flex sticky top-0 shadow-xl h-16 py-3 px-10 items-center w-full bg-white justify-end">
-      <div className="relative ">
+    <nav
+      className={`flex h-20 p-6  items-center w-full ${
+        toggle ? "bg-gray-900" : "bg-indigo-100"
+      }`}
+    >
+      <div className="relative w-1/4">
+        <IoMdSearch className="w-4 h-4 text-gray-700 absolute top-3 left-2" />
         <input
           type="search"
           placeholder="Search"
-          className="border-b-2 w-full bg-slate-100 border-purple-800 py-1 px-6 rounded-md"
+          className="border w-full border-slate-300 py-2 px-6 rounded-full placeholder:ps-2"
         />
-        <IoMdSearch className="w-5 h-5 text-gray-700 absolute top-2 right-2" />
+      </div>
+
+      <div className="flex flex-grow justify-end gap-12 items-center">
+        <CiSettings  className="w-6 h-6" />
+        <div
+         onClick={togglePenal}
+          className="cursor-pointer"
+        >
+          <img
+            src={profile}
+            alt=""
+            className="w-9 h-9 rounded-md text-center"
+          />
+        </div>
       </div>
     </nav>
   );

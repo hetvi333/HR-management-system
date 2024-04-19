@@ -10,7 +10,7 @@ const EmpDetails = (props) => {
   return (
     <div className="grid  grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
       {data.map((user, i) => (
-        <div key={i} className="p-4 bg-white shadow-md rounded-lg">
+        <div key={i} className="p-4 rounded-lg shadow-lg border border-gray-300 shadow-indigo-400/30 bg-white">
           {/* checkbox and label */}
           <div className="flex justify-between pb-3">
             <input type="checkbox" />

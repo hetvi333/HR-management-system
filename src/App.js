@@ -1,12 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./App.css";
 import AppRoutes from "./AppRoutes";
 import { ThemeContext } from "./contexts/ThemeContext";
 
 function App() {
-  const { toggle } = React.useContext(ThemeContext);
+  const { toggle } = useContext(ThemeContext);
   return (
-    <div className={`${toggle ? "bg-purple-900" : "bg-purple-50"}`}>
+    <div className={`${toggle ? "bg-gray-900" : "bg-indigo-100"}`}>
       <AppRoutes />
     </div>
   );

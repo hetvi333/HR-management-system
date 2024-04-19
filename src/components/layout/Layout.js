@@ -1,14 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "../../navigation/Navbar";
 import Sidebar from "../../navigation/Sidebar";
+import ProfilePenal from "../../navigation/ProfilePenal";
 
 const Layout = (props) => {
+  const [isPenalOpen, setIsPenalOpen] = useState(false);
+
+  const togglePenal = () => {
+    setIsPenalOpen(!isPenalOpen);
+  };
   return (
     <>
+          {isPenalOpen && <ProfilePenal penalOpen={isPenalOpen}  />}
       <div className="flex">
         <Sidebar />
         <div className="w-full">
-          <Navbar />
+          <Navbar togglePenal={togglePenal} />
           {props.children}
         </div>
       </div>

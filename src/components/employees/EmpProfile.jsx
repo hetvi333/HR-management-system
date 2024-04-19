@@ -6,6 +6,7 @@ import empData from "../../EmployeeData.json";
 import EmpStatus from "./EmpStatus";
 import { Link, useParams } from "react-router-dom";
 
+
 const EmpProfile = (props) => {
   const { id } = useParams();
 

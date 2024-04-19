@@ -1,23 +1,21 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import profile from "../images/Avatar6-ranking.png";
-
-// react icons
+import { FaChevronLeft, FaChevronRight, FaRegUser } from "react-icons/fa";
+import { SiSimpleanalytics } from "react-icons/si";
+import { ThemeContext } from "../contexts/ThemeContext";
+import { LuCalendarCheck2 } from "react-icons/lu";
 import {
   MdDarkMode,
   MdOutlineDashboard,
   MdOutlineLightMode,
 } from "react-icons/md";
-import { FaCalendarCheck, FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import { FaUser } from "react-icons/fa6";
-import { SiSimpleanalytics } from "react-icons/si";
-import { ThemeContext } from "../contexts/ThemeContext";
 
 const Sidebar = () => {
   const { toggle, toggleFunction } = React.useContext(ThemeContext);
 
   const [isOpen, setIsOpen] = useState(false);
-  const [theme, setTheme] = useState(false);
+
 
   const sideMenu = [
     {
@@ -29,12 +27,12 @@ const Sidebar = () => {
     {
       name: "Calendar",
       link: "/Calendar",
-      Icon: FaCalendarCheck,
+      Icon: LuCalendarCheck2,
     },
     {
       name: "Employees",
       link: "/Employee",
-      Icon: FaUser,
+      Icon: FaRegUser,
     },
     {
       name: "Performance",
@@ -66,9 +64,9 @@ const Sidebar = () => {
             return (
               <li key={i}>
                 <Link to={menu.link}>
-                  <div className="relative flex items-center py-2 px-3 my-1 font-medium rounded-md cursor-pointer transition-colors group hover:bg-indigo-50 hover:text-indigo-800">
+                  <div className="relative flex items-center py-5 px-3 my-1 font-medium rounded-md cursor-pointer transition-colors group hover:bg-indigo-50 hover:text-indigo-800">
                     <span>
-                      <Icon />
+                      <Icon className="text-indigo-700 text-xl" />
                     </span>
                     <span
                       className={`overflow-hidden transition-all ${
@@ -94,9 +92,9 @@ const Sidebar = () => {
         <div className="relative flex items-center p-3 mx-auto  font-medium rounded-md cursor-pointer transition-colors group hover:bg-indigo-50 hover:text-indigo-800 bg-slate-100">
           <span onClick={toggleFunction}>
             {toggle ? (
-              <MdOutlineLightMode size={22} />
+              <MdOutlineLightMode size={22} className="text-indigo-700" />
             ) : (
-              <MdDarkMode size={22} />
+              <MdDarkMode size={22} className="text-indigo-700" />
             )}
           </span>
           <span
