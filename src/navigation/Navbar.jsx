@@ -13,20 +13,17 @@ const Navbar = ({ togglePenal }) => {
       }`}
     >
       <div className="relative w-1/4">
-        <IoMdSearch className="w-4 h-4 text-gray-700 absolute top-3 left-2" />
+        <IoMdSearch className="w-4 h-4 text-gray-700 absolute my-auto left-2 inset-y-0" />
         <input
           type="search"
           placeholder="Search"
-          className="border w-full border-slate-300 py-2 px-6 rounded-full placeholder:ps-2"
+          className="border w-full border-slate-300 py-2 px-7 rounded-full placeholder:ps-2"
         />
       </div>
 
       <div className="flex flex-grow justify-end gap-12 items-center">
-        <CiSettings  className="w-6 h-6" />
-        <div
-         onClick={togglePenal}
-          className="cursor-pointer"
-        >
+        <CiSettings className="w-6 h-6" />
+        <div onClick={togglePenal} className="cursor-pointer">
           <img
             src={profile}
             alt=""

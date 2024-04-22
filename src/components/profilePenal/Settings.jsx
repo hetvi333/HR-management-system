@@ -26,7 +26,7 @@ const Settings = () => {
         {settings.map((item, index) => {
           const Icon = item.Icon;
           return (
-            <div key={index} className="flex justify-start items-center p-3 gap-4 border rounded-lg">
+            <div key={index} className="flex justify-start items-center p-3 gap-4 border rounded-lg cursor-pointer hover:bg-slate-50">
               <Icon className="text-xl text-indigo-600" />
               <div>
                 <h1 className="text-base font-bold">{item.name}</h1>

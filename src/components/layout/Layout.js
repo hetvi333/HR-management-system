@@ -9,9 +9,11 @@ const Layout = (props) => {
   const togglePenal = () => {
     setIsPenalOpen(!isPenalOpen);
   };
+
+ 
   return (
     <>
-          {isPenalOpen && <ProfilePenal penalOpen={isPenalOpen}  />}
+      {<ProfilePenal penalOpen={isPenalOpen} togglePenal={togglePenal} />}
       <div className="flex">
         <Sidebar />
         <div className="w-full">

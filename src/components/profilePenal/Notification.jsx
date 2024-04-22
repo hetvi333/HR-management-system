@@ -29,7 +29,7 @@ const Notification = () => {
           return (
             <div
               key={index}
-              className="flex justify-start items-center p-3 gap-4 border rounded-lg"
+              className="flex justify-start items-center p-3 gap-4 border rounded-lg cursor-pointer hover:bg-slate-50"
             >
               <Icon className="text-xl text-indigo-600" />
               <div>

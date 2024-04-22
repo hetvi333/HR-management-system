@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import Toggle from "../components/employees/Toggle";
-import EmpTable from "../components/employees/EmpTable";
 import empData from "../EmployeeData.json";
 import EmpDetails from "../components/employees/EmpDetails";
 import EmpData from "../components/employees/EmpData";
@@ -9,16 +7,12 @@ import EmpData from "../components/employees/EmpData";
 import { GoPlus } from "react-icons/go";
 
 const Employee = () => {
-  const [userProfile, setUserProfile] = useState(true);
   const [open, setOpen] = useState(false);
 
   const addNew = () => {
     setOpen(!open);
   };
 
-  const toggleBtn = () => {
-    setUserProfile(!userProfile);
-  };
   return (
     <>
       <section>
@@ -45,19 +39,12 @@ const Employee = () => {
               <GoPlus size={20} />
               Add New
             </button>
-            <button onClick={toggleBtn}>
-              <Toggle />
-            </button>
           </div>
         </div>
       </section>
 
       <section className="p-8">
-        {userProfile ? (
-          <EmpDetails data={empData} />
-        ) : (
-          <EmpTable data={empData} />
-        )}
+        <EmpDetails data={empData} />
       </section>
     </>
   );

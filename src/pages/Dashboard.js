@@ -10,7 +10,7 @@ const Dashboard = () => {
     <div>
       <section>
         <div className=" flex flex-col justify-start px-6 py-4 gap-2">
-          <h1 className=" font-bold text-4xl">Welcome Isabel</h1>
+          <h1 className=" font-bold text-4xl">Welcome Melania</h1>
           <p className=" font-semibold text-lg text-slate-500">
             Your last login was on 04/02/2024 at 10:24 am
           </p>

@@ -5,6 +5,7 @@ import { FaChevronLeft, FaChevronRight, FaRegUser } from "react-icons/fa";
 import { SiSimpleanalytics } from "react-icons/si";
 import { ThemeContext } from "../contexts/ThemeContext";
 import { LuCalendarCheck2 } from "react-icons/lu";
+import { PiChatsCircleBold } from "react-icons/pi";
 import {
   MdDarkMode,
   MdOutlineDashboard,
@@ -15,7 +16,6 @@ const Sidebar = () => {
   const { toggle, toggleFunction } = React.useContext(ThemeContext);
 
   const [isOpen, setIsOpen] = useState(false);
-
 
   const sideMenu = [
     {
@@ -38,6 +38,11 @@ const Sidebar = () => {
       name: "Performance",
       link: "/Perfomance",
       Icon: SiSimpleanalytics,
+    },
+    {
+      name: "Chat",
+      link: "/Chat",
+      Icon: PiChatsCircleBold,
     },
   ];
 
@@ -64,7 +69,7 @@ const Sidebar = () => {
             return (
               <li key={i}>
                 <Link to={menu.link}>
-                  <div className="relative flex items-center py-5 px-3 my-1 font-medium rounded-md cursor-pointer transition-colors group hover:bg-indigo-50 hover:text-indigo-800">
+                  <div className="relative flex items-center py-4 px-3 my-1 font-medium rounded-md cursor-pointer transition-colors group hover:bg-indigo-50 hover:text-indigo-800">
                     <span>
                       <Icon className="text-indigo-700 text-xl" />
                     </span>
@@ -77,7 +82,7 @@ const Sidebar = () => {
                     </span>
                     {!isOpen && (
                       <div
-                        className={`absolute left-full rounded-md px-2 py-1 ml-6 bg-indigo-300 text-indigo-800 text-sm invisible opacity-20 -translate-x-3 transition-all group-hover:visible group-hover:opacity-100 group-hover:translate-x-0`}
+                        className={`absolute z-50 left-full rounded-md px-2 py-1 ml-6 bg-indigo-300 text-indigo-800 text-sm invisible opacity-20 -translate-x-3 transition-all group-hover:visible group-hover:opacity-100 group-hover:translate-x-0`}
                       >
                         {menu.name}
                       </div>
