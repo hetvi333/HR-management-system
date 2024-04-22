@@ -23,6 +23,7 @@ const Dashboard = () => {
             <Data />
           </div>
         </section>
+
         <section className="p-3 gap-5 grid grid-cols-6">
           <div className="col-span-6 md:col-span-4">
             <Revenue />
@@ -31,6 +32,7 @@ const Dashboard = () => {
             <Analysis />
           </div>
         </section>
+        
         <section className="grid grid-cols-2 gap-6 p-3">
           <div className=" lg:col-span-1 col-span-2">
             <Employee />

@@ -10,12 +10,15 @@ const ProfilePenal = ({ penalOpen, togglePenal }) => {
   };
   return (
     <>
+    <div>
+      
+    </div>
       <div
         className={`${
           penalOpen ? "right-0" : "-right-full"
-        } w-full overflow-scroll  bg-white fixed top-0 h-full shadow-2xl md:w-[30vw] xl:max-w-[30vw] transition-all duration-1000 z-50 px-6 lg:px-[35px]}`}
+        } w-full overflow-scroll  bg-white fixed top-0 h-full shadow-2xl md:w-[30vw] xl:max-w-[30vw] transition-all duration-300 z-50 lg:px-[35px]}`}
       >
-        <div className="flex justify-between items-center mb-4 sticky top-0 z-20 bg-white">
+        <div className="flex justify-between items-center mb-4 sticky top-0 z-20 p-6 bg-white">
           <div>
             <div className="flex flex-col gap-1">
               <h1 className="text-gray-950 text-lg font-semibold">Welcome</h1>
@@ -29,7 +32,7 @@ const ProfilePenal = ({ penalOpen, togglePenal }) => {
           </div>
         </div>
 
-        <div className="z-0">
+        <div className="px-6">
           <Settings />
 
           <div className="p-3 mb-4 flex flex-col gap-1">
@@ -40,7 +43,6 @@ const ProfilePenal = ({ penalOpen, togglePenal }) => {
               You have 3 notifications
             </p>
           </div>
-
           <Notification />
 
           <div className="p-3 mb-4 flex flex-col gap-1">
@@ -49,7 +51,6 @@ const ProfilePenal = ({ penalOpen, togglePenal }) => {
               You have new messages
             </p>
           </div>
-
           <Messages />
         </div>
       </div>

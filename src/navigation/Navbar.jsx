@@ -17,7 +17,7 @@ const Navbar = ({ togglePenal }) => {
         <input
           type="search"
           placeholder="Search"
-          className="border w-full border-slate-300 py-2 px-7 rounded-full placeholder:ps-2"
+          className="border w-full outline-none border-slate-300 hover:border-indigo-600 focus:ring-2 focus:ring-indigo-300 py-2 px-7 rounded-full placeholder:ps-2"
         />
       </div>
 
