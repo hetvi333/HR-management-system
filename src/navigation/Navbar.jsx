@@ -3,8 +3,12 @@ import { ThemeContext } from "../contexts/ThemeContext";
 import { IoMdSearch } from "react-icons/io";
 import { CiSettings } from "react-icons/ci";
 import profile from "../images/Avatar6-ranking.png";
+import Searchbar from "../components/searchbox/Searchbar";
+
 
 const Navbar = ({ togglePenal }) => {
+  
+
   const { toggle } = useContext(ThemeContext);
   return (
     <nav
@@ -12,14 +16,9 @@ const Navbar = ({ togglePenal }) => {
         toggle ? "bg-gray-900" : "bg-indigo-100"
       }`}
     >
-      <div className="relative w-1/4">
-        <IoMdSearch className="w-4 h-4 text-gray-700 absolute my-auto left-2 inset-y-0" />
-        <input
-          type="search"
-          placeholder="Search"
-          className="border w-full outline-none border-slate-300 hover:border-indigo-600 focus:ring-2 focus:ring-indigo-300 py-2 px-7 rounded-full placeholder:ps-2"
-        />
-      </div>
+
+      <Searchbar/>
+   
 
       <div className="flex flex-grow justify-end gap-12 items-center">
         <CiSettings className="w-6 h-6" />
