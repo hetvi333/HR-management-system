@@ -7,15 +7,13 @@ import EmpStatus from "./EmpStatus";
 import { Link, useParams } from "react-router-dom";
 
 
-const EmpProfile = (props) => {
+const EmpProfile = () => {
   const { id } = useParams();
 
-  // find the employee id
   const employee = empData.find((user) => {
     return user.id === parseInt(id);
   });
 
-  // if the empProfile is not found
   if (!employee) {
     return (
       <section className="h-screen flex justify-center items-center">
@@ -26,7 +24,6 @@ const EmpProfile = (props) => {
 
   return (
     <div className=" px-16 py-8">
-      {/* button */}
       <div className="flex justify-between">
         <Link to={"/Employee"}>
           <button className=" capitalize bg-yellow-500 py-1 px-4 text-[13px]  rounded-md font-bold text-white">
@@ -38,7 +35,6 @@ const EmpProfile = (props) => {
         </div>
       </div>
 
-      {/* profile */}
       <div className="flex flex-col items-center mb-4">
         <img src={profile} alt="" className=" w-36 h-36" />
         <h1 className="text-2xl font-semibold">{employee.name}</h1>
@@ -47,7 +43,6 @@ const EmpProfile = (props) => {
         </p>
       </div>
 
-      {/* details */}
       <div className=" px-56">
         <div className="bg-blue-200 p-4 rounded-md">
           <div className="flex justify-between">

@@ -1,90 +1,82 @@
-import React, { useState } from "react";
-import { RxCross1 } from "react-icons/rx";
+import React from "react";
+import { FiCamera } from "react-icons/fi";
 
-const EmpData = ({ onClose, open }) => {
+const EmpData = () => {
   return (
-    <div
-      className={`${
-        open ? "right-0" : "right-0"
-      }  bg-slate-200 rounded-2xl w-full md:w-[35vw] transition-all duration-300 z-20 px-4 top-0 right-0 fixed h-full `}
-    >
-      <div className="flex items-center justify-between py-4 border-b border-blue-300 ">
-        <div className=" capitalize text-[25px] font-semibold">
-          add new profile
-        </div>
-        <div className=" cursor-pointer w-8 h-8 flex justify-center items-center">
-          <RxCross1 onClick={onClose} className="text-2xl" />
-        </div>
-      </div>
-
-      <div className="p-3 flex flex-col justify-center items-center gap-5 ">
-        <div className=" w-3/4">
-          <label htmlFor="">Full Name</label>
-          <input
-            type="text"
-            className=" rounded-md py-2 px-10  w-full placeholder:text-center"
-            placeholder="Enter name"
-          />
-        </div>
-
-        <div className="w-3/4">
-          <label htmlFor="">Email Address</label>
-          <input
-            type="email"
-            className=" rounded-md py-2 px-10  w-full placeholder:text-center"
-            placeholder="Enter name"
-          />
-        </div>
-
-        <div className="w-3/4">
-          <label htmlFor="">Contact No.</label>
-          <input
-            type="tel"
-            className=" rounded-md py-2 px-10  w-full placeholder:text-center"
-            placeholder="Enter name"
-          />
-        </div>
-
-        <div className="w-3/4">
-          <label htmlFor="">Designation</label>
-          <input
-            type="text"
-            className=" rounded-md py-2 px-10  w-full placeholder:text-center"
-            placeholder="Enter name"
-          />
-        </div>
-
-        <div className="w-3/4">
-          <label htmlFor="">Department</label>
-          <input
-            type="text"
-            className=" rounded-md py-2 px-10  w-full placeholder:text-center"
-            placeholder="Enter name"
-          />
-        </div>
-
-        <div className="w-3/4">
-          <label htmlFor="">Join Date</label>
-          <input
-            type="date"
-            className=" rounded-md w-full py-2 px-10 placeholder:text-center"
-            placeholder="Enter name"
-          />
-        </div>
-
-        <div className="flex gap-6 w-3/4 py-2 ">
-          <button
-            onClick={onClose}
-            className="bg-gray-600 w-full py-2 px-10 rounded-md"
-          >
-            Cancel
-          </button>
-          <button className="bg-green-600  w-full py-2 px-10 rounded-md">
-            Save
-          </button>
+    <>
+      <div className="px-8 py-3">
+        <h1 className="text-indigo-600 text-center md:text-start text-lg font-bold underline cursor-pointer">
+          Employee Information
+        </h1>
+        <div className="md:px-6">
+          <div className="py-6 gap-4 md:gap-0 flex flex-col justify-center items-center md:flex-row md:justify-between md:items-end">
+            <div className="flex items-center justify-center text-2xl bg-gray-50 rounded-2xl border border-slate-300 w-32 h-32 md:w-24 md:h-24">
+              <FiCamera />
+            </div>
+            <div className="flex w-full md:w-3/12 gap-4">
+              <button className="p-2 w-full bg-white border border-indigo-500 rounded-lg text-indigo-500 text-lg font-semibold cursor-pointer">
+                Cancel
+              </button>
+              <button className="p-2 w-full bg-indigo-500 rounded-lg text-white text-lg font-semibold cursor-pointer">
+                Add
+              </button>
+            </div>
+          </div>
+          <div className="grid grid-cols-12 gap-3 md:gap-6">
+            <input
+              type="text"
+              placeholder="First Name"
+              className="col-span-12 md:col-span-4 rounded-lg p-4"
+            />
+            <input
+              type="text"
+              placeholder="Last Name"
+              className="col-span-12 md:col-span-4 rounded-lg p-4"
+            />
+            <input
+              type="text"
+              placeholder="Mobile Number"
+              className="col-span-12 md:col-span-4 rounded-lg p-4"
+            />
+            <input
+              type="email"
+              placeholder="Email Address"
+              className="col-span-12 md:col-span-4 rounded-lg p-4"
+            />
+            <input
+              type="text"
+              placeholder="Gender"
+              className="col-span-12 md:col-span-4 rounded-lg p-4"
+            />
+              <input
+                type="text"
+                placeholder="Department"
+                className="col-span-12 md:col-span-4 rounded-lg p-4"
+              />
+            <input
+              type="date"
+              placeholder="Date of Birth"
+              className="col-span-12 md:col-span-6 rounded-lg p-4"
+            />
+            <input
+              type="date"
+              placeholder="Date of Join"
+              className="col-span-12 md:col-span-6 rounded-lg p-4"
+            />
+              <input
+                type="text"
+                placeholder="City"
+                className="col-span-4 rounded-lg p-4"
+              />
+            <input
+              type="text"
+              placeholder="Address"
+              className="col-span-8 rounded-lg p-4"
+            />
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

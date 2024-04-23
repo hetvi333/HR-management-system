@@ -9,6 +9,7 @@ import Layout from "./components/layout/Layout";
 import Employee from "./pages/Employee";
 import EmpProfile from "./components/employees/EmpProfile";
 import Chat from "./pages/Chat";
+import EmpData from "./components/employees/EmpData";
 
 const AppRoutes = () => {
   return (
@@ -18,6 +19,7 @@ const AppRoutes = () => {
           <Route path="/" element={<Dashboard />} />
           <Route path="/Calendar" element={<Calendar />} />
           <Route path="/Employee" element={<Employee />} />
+          <Route path="/Employee/Add-Employee" element={<EmpData />} />
           <Route path="/Employee/:id" element={<EmpProfile />} />
           <Route path="/Perfomance" element={<Perfomance />} />
           <Route path="/Chat" element={<Chat />} />
