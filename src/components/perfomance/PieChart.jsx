@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ThemeContext } from "../../contexts/ThemeContext";
 
 import { Doughnut } from "react-chartjs-2";
 import { Chart as ChartJS, Tooltip, Legend, Title, ArcElement } from "chart.js";
@@ -6,6 +7,7 @@ import { Chart as ChartJS, Tooltip, Legend, Title, ArcElement } from "chart.js";
 ChartJS.register(ArcElement, Title, Tooltip, Legend);
 
 const PieChart = () => {
+  const { toggle } = useContext(ThemeContext);
   const data = {
     labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
     datasets: [
@@ -28,8 +30,12 @@ const PieChart = () => {
 
   return (
     <>
-      <div className="bg-white rounded-xl shadow-lg p-8 mb-6">
-        <h1 className="text-2xl font-bold text-left">Perfomance</h1>
+      <div className={` rounded-xl border shadow-lg p-8 mb-6 ${
+          toggle
+            ? "bg-[#161a1f] border-[#2a2e34]"
+            : "border-gray-300 shadow-indigo-400/30 bg-white"
+        }`}>
+        <h1 className={`text-2xl font-bold text-left ${toggle ? "text-white" : ""}`}>Perfomance</h1>
 
         <div>
           <Doughnut data={data} width={60} height={60}></Doughnut>

@@ -9,7 +9,7 @@ const EmpStatus = ({ availability }) => {
         availability === "active",
     },
     {
-      "text-yellow-600 bg-yellow-200 uppercase":
+      "text-yellow-800 bg-yellow-200 uppercase":
         availability === "unverified",
     },
     {
