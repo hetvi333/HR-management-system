@@ -7,13 +7,11 @@ import Searchbar from "../components/searchbox/Searchbar";
 
 
 const Navbar = ({ togglePenal }) => {
-  
-
   const { toggle } = useContext(ThemeContext);
   return (
     <nav
       className={`flex h-20 p-6  items-center w-full ${
-        toggle ? "bg-gray-900" : "bg-indigo-100"
+        toggle ? "bg-[#111417]" : "bg-indigo-100"
       }`}
     >
 
@@ -21,7 +19,7 @@ const Navbar = ({ togglePenal }) => {
    
 
       <div className="flex flex-grow justify-end gap-12 items-center">
-        <CiSettings className="w-6 h-6" />
+        <CiSettings className={`w-6 h-6 ${toggle ? "text-white" : "text-black"}`} />
         <div onClick={togglePenal} className="cursor-pointer">
           <img
             src={profile}

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import profile from "../images/Avatar6-ranking.png";
 import { FaChevronLeft, FaChevronRight, FaRegUser } from "react-icons/fa";
@@ -13,7 +13,7 @@ import {
 } from "react-icons/md";
 
 const Sidebar = () => {
-  const { toggle, toggleFunction } = React.useContext(ThemeContext);
+  const { toggle, toggleFunction } = useContext(ThemeContext);
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -48,7 +48,11 @@ const Sidebar = () => {
 
   return (
     <div className="h-screen sticky top-0 z-50">
-      <nav className="h-full flex flex-col bg-white border-r shadow-sm">
+      <nav
+        className={`h-full flex flex-col border-r shadow-sm ${
+          toggle ? "bg-[#111417]" : "bg-white "
+        }`}
+      >
         <div className="p-4 pb-2 mb-2 flex justify-between items-center">
           <img
             src={profile}
@@ -58,7 +62,11 @@ const Sidebar = () => {
           />
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="p-3 h-12 rounded-lg bg-gray-100 hover:bg-indigo-50 hover:text-indigo-800"
+            className={`p-3 h-12 rounded-lg bg-gray-100 hover:bg-indigo-50 hover:text-indigo-800 ${
+              toggle
+                ? "bg-gray-500 text-white hover:bg-indigo-200"
+                : "bg-gray-100 hover:bg-indigo-50"
+            }`}
           >
             {isOpen ? <FaChevronLeft /> : <FaChevronRight />}
           </button>
@@ -69,14 +77,18 @@ const Sidebar = () => {
             return (
               <li key={i}>
                 <Link to={menu.link}>
-                  <div className="relative flex items-center py-4 px-3 my-1 font-medium rounded-md cursor-pointer transition-colors group hover:bg-indigo-50 hover:text-indigo-800">
+                  <div className={`relative flex items-center py-4 px-3 my-1 font-medium rounded-md cursor-pointer transition-colors group hover:bg-indigo-50 hover:text-indigo-800`}>
                     <span>
-                      <Icon className="text-indigo-700 text-xl" />
+                      <Icon
+                        className={`${
+                          toggle ? "text-indigo-300 " : "text-indigo-700 "
+                        }text-xl`}
+                      />
                     </span>
                     <span
                       className={`overflow-hidden transition-all ${
                         isOpen ? " w-40 ml-3" : "w-0"
-                      }`}
+                      } ${toggle ? "text-white" : "text-black"}`}
                     >
                       {menu.name}
                     </span>
@@ -94,12 +106,18 @@ const Sidebar = () => {
           })}
         </ul>
 
-        <div className="relative flex items-center p-3 mx-auto  font-medium rounded-md cursor-pointer transition-colors group hover:bg-indigo-50 hover:text-indigo-800 bg-slate-100">
+        <div
+          className={`relative flex items-center p-3 mx-auto  font-medium rounded-md cursor-pointer transition-colors hover:text-indigo-800 group  ${
+            toggle
+              ? "bg-gray-500 text-white hover:bg-indigo-200"
+              : "hover:bg-indigo-50  bg-slate-100"
+          }`}
+        >
           <span onClick={toggleFunction}>
             {toggle ? (
-              <MdOutlineLightMode size={22} className="text-indigo-700" />
+              <MdOutlineLightMode size={22} />
             ) : (
-              <MdDarkMode size={22} className="text-indigo-700" />
+              <MdDarkMode size={22} />
             )}
           </span>
           <span
