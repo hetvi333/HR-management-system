@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ThemeContext } from "../../contexts/ThemeContext";
 import profile from "../../images/Avatar6-ranking.png";
 
 const Messages = () => {
+  const { toggle } = useContext(ThemeContext);
   const settings = [
     {
       name: "Mccoy Brown",
@@ -25,7 +27,7 @@ const Messages = () => {
         return (
           <div
             key={index}
-            className="flex justify-between items-center p-3 gap-4 border rounded-lg cursor-pointer hover:bg-slate-50"
+            className={`flex justify-start items-center p-3 gap-4 border rounded-lg cursor-pointer ${toggle ? "hover:bg-[#1a1e23] border-[#2a2e34]" : "hover:bg-slate-50"}`}
           >
             <div className="flex items-center gap-3">
               <div className="w-8 h-8">

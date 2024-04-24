@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ThemeContext } from "../../contexts/ThemeContext";
 import { FaRegFolder } from "react-icons/fa";
 import { FiMessageSquare } from "react-icons/fi";
 import { RiDeleteBinLine } from "react-icons/ri";
 
 const Notification = () => {
+  const { toggle } = useContext(ThemeContext);
   const settings = [
     {
       Icon: FiMessageSquare,
@@ -29,7 +31,7 @@ const Notification = () => {
           return (
             <div
               key={index}
-              className="flex justify-start items-center p-3 gap-4 border rounded-lg cursor-pointer hover:bg-slate-50"
+              className={`flex justify-start items-center p-3 gap-4 border rounded-lg cursor-pointer ${toggle ? "hover:bg-[#1a1e23] border-[#2a2e34]" : "hover:bg-slate-50"}`}
             >
               <Icon className="text-xl text-indigo-600" />
               <div>
