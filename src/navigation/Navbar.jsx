@@ -19,7 +19,6 @@ const Navbar = ({ togglePenal }) => {
    
 
       <div className="flex flex-grow justify-end gap-12 items-center">
-        <CiSettings className={`w-6 h-6 ${toggle ? "text-white" : "text-black"}`} />
         <div onClick={togglePenal} className="cursor-pointer">
           <img
             src={profile}

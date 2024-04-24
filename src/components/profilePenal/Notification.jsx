@@ -33,7 +33,7 @@ const Notification = () => {
               key={index}
               className={`flex justify-start items-center p-3 gap-4 border rounded-lg cursor-pointer ${toggle ? "hover:bg-[#1a1e23] border-[#2a2e34]" : "hover:bg-slate-50"}`}
             >
-              <Icon className="text-xl text-indigo-600" />
+              <Icon className={`text-xl ${toggle ? "text-indigo-300 " : "text-indigo-700 "}`} />
               <div>
                 <h1 className="text-base font-bold">{item.name}</h1>
                 <p className="text-slate-400 text-base font-medium">

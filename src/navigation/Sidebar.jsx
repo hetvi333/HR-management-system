@@ -49,8 +49,8 @@ const Sidebar = () => {
   return (
     <div className="h-screen sticky top-0 z-50">
       <nav
-        className={`h-full flex flex-col border-r shadow-sm ${
-          toggle ? "bg-[#111417]" : "bg-white "
+        className={`h-full flex flex-col ${
+          toggle ? "bg-[#161a1f]" : "bg-white "
         }`}
       >
         <div className="p-4 pb-2 mb-2 flex justify-between items-center">
@@ -65,7 +65,7 @@ const Sidebar = () => {
             className={`p-3 h-12 rounded-lg bg-gray-100 hover:bg-indigo-50 hover:text-indigo-800 ${
               toggle
                 ? "bg-gray-500 text-white hover:bg-indigo-200"
-                : "bg-gray-100 hover:bg-indigo-50"
+                : "bg-slate-200 hover:bg-indigo-50"
             }`}
           >
             {isOpen ? <FaChevronLeft /> : <FaChevronRight />}
@@ -77,7 +77,9 @@ const Sidebar = () => {
             return (
               <li key={i}>
                 <Link to={menu.link}>
-                  <div className={`relative flex items-center py-4 px-3 my-1 font-medium rounded-md cursor-pointer transition-colors group hover:bg-indigo-50 hover:text-indigo-800`}>
+                  <div
+                    className={`relative flex items-center py-4 px-3 my-1 font-medium rounded-md cursor-pointer transition-colors group hover:bg-indigo-50 hover:text-indigo-800`}
+                  >
                     <span>
                       <Icon
                         className={`${
@@ -107,26 +109,28 @@ const Sidebar = () => {
         </ul>
 
         <div
-          className={`relative flex items-center p-3 mx-auto  font-medium rounded-md cursor-pointer transition-colors hover:text-indigo-800 group  ${
+          className={`relative flex items-center my-5 p-3 mx-auto  font-medium rounded-lg cursor-pointer transition-colors hover:text-indigo-800 group  ${
             toggle
               ? "bg-gray-500 text-white hover:bg-indigo-200"
-              : "hover:bg-indigo-50  bg-slate-100"
+              : "hover:bg-indigo-50  bg-slate-200"
           }`}
         >
-          <span onClick={toggleFunction}>
-            {toggle ? (
-              <MdOutlineLightMode size={22} />
-            ) : (
-              <MdDarkMode size={22} />
-            )}
-          </span>
-          <span
-            className={`overflow-hidden transition-all ${
-              isOpen ? " w-40 ml-3" : "w-0"
-            } `}
-          >
-            {toggle ? "LightMode" : "DarkMode"}
-          </span>
+          <div className="flex" onClick={toggleFunction}>
+            <span>
+              {toggle ? (
+                <MdOutlineLightMode size={22} />
+              ) : (
+                <MdDarkMode size={22} />
+              )}
+            </span>
+            <span
+              className={`overflow-hidden transition-all ${
+                isOpen ? " w-40 ml-3" : "w-0"
+              } `}
+            >
+              {toggle ? "LightMode" : "DarkMode"}
+            </span>
+          </div>
           {!isOpen && (
             <div
               className={`absolute left-full rounded-md px-2 py-1 ml-6 bg-indigo-300 text-indigo-800 text-sm invisible opacity-20 -translate-x-3 transition-all group-hover:visible group-hover:opacity-100 group-hover:translate-x-0`}
@@ -136,7 +140,7 @@ const Sidebar = () => {
           )}
         </div>
 
-        <div className="flex gap-3 p-2">
+        {/* <div className="flex gap-3 p-2">
           <img
             src={profile}
             alt=""
@@ -152,7 +156,7 @@ const Sidebar = () => {
               <span className="text-sm text-gray-300">xyz@gmail.com</span>
             </div>
           </div>
-        </div>
+        </div> */}
       </nav>
     </div>
   );

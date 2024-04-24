@@ -32,7 +32,7 @@ const Searchbar = () => {
         }`}
       />
       {showSuggestions && (
-        <div className="absolute w-full left-0 max-h-56 rounded-xl p-2 overflow-y-scroll bg-white top-20 cursor-pointer">
+        <div className="absolute w-full left-0 max-h-56 rounded-xl p-2 overflow-y-scroll border border-gray-300 shadow-indigo-400/30 bg-white hover:border-indigo-600 top-16 cursor-pointer z-50">
           {EmployeeData?.filter((item) => {
             const search = value.toLowerCase();
             const name = item.name.toLowerCase();
