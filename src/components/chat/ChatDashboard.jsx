@@ -10,7 +10,7 @@ const ChatDashboard = () => {
   const { toggle } = useContext(ThemeContext);
   return (
     <div
-      className={` rounded-lg border p-4 ${
+      className={` rounded-lg border h-screen p-4 ${
         toggle
           ? "bg-[#161a1f] border-[#2a2e34]"
           : "border-gray-300 shadow-indigo-400/30 bg-white"

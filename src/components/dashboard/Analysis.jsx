@@ -17,11 +17,11 @@ const Analysis = () => {
       className={`flex flex-col  rounded-xl shadow-lg border px-6 py-0 ${
         toggle
           ? "bg-[#161a1f] border-[#2a2e34] text-white"
-          : "border-gray-300 shadow-indigo-400/30 bg-white"
+          : "border-gray-300 shadow-indigo-400/30 bg-white h-full"
       }`}
     >
       {data.map((item, index) => (
-        <div key={index} className="flex items-center">
+        <div key={index} className="flex items-center py-3">
           <div className="p-5 w-24 h-24">
             <CircularProgressbar
               value={item.percentage}

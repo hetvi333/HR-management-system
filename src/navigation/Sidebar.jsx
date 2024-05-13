@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import profile from "../images/Avatar6-ranking.png";
+import profile from "../images/logo.png";
 import { FaChevronLeft, FaChevronRight, FaRegUser } from "react-icons/fa";
 import { SiSimpleanalytics } from "react-icons/si";
 import { ThemeContext } from "../contexts/ThemeContext";
@@ -54,12 +54,18 @@ const Sidebar = () => {
         }`}
       >
         <div className="p-4 pb-2 mb-2 flex justify-between items-center">
-          <img
-            src={profile}
-            className={`overflow-hidden transition-all ${
-              isOpen ? "w-10" : "w-0"
+          <div
+            className={`flex items-end gap-1 overflow-hidden transition-all ${
+              isOpen ? "" : "w-0"
             }`}
-          />
+          >
+            <img src={profile} className="w-10 h-10" />
+            <span className={`italic font-bold text-xl ${
+                          toggle ? "text-indigo-300 " : "text-indigo-700 "
+                        }`}>
+              killForge
+            </span>
+          </div>
           <button
             onClick={() => setIsOpen(!isOpen)}
             className={`p-3 h-12 rounded-lg bg-gray-100 hover:bg-indigo-50 hover:text-indigo-800 ${

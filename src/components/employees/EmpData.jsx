@@ -79,7 +79,7 @@ const EmpData = () => {
             <input
               type="date"
               placeholder="Date of Birth"
-              className={`col-span-12 border md:col-span-6 rounded-lg p-4 ${
+              className={`col-span-12 border md:col-span-6 rounded-lg p-4 before:content ${
                 toggle ? "bg-transparent border-[#575f68] " : ""
               }`}
             />

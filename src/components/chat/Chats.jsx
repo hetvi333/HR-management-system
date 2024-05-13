@@ -44,7 +44,7 @@ const Chats = () => {
 
       <div className="flex justify-end py-4">
         <div className="flex flex-col items-end gap-3">
-          <p className="p-4 border rounded-lg text-purple-900 w-2/3 bg-indigo-200 font-medium">
+          <p className="p-4 border rounded-lg text-purple-900 w-2/3 bg-indigo-100 font-medium">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit,
             inventore?
           </p>

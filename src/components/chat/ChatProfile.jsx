@@ -8,7 +8,7 @@ const ChatProfile = () => {
   const { toggle } = useContext(ThemeContext);
   return (
     <div
-      className={`rounded-lg border max-h-[88vh] overflow-y-scroll ${
+      className={`rounded-lg border h-screen overflow-y-scroll ${
         toggle
           ? "bg-[#161a1f] border-[#2a2e34]"
           : "border-gray-300 shadow-indigo-400/30 bg-white"

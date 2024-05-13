@@ -75,7 +75,7 @@ const Revenue = () => {
         className={`rounded-xl p-5 shadow-lg border ${
           toggle
             ? "bg-[#161a1f] border-[#2a2e34]"
-            : "border-gray-300 shadow-indigo-400/30 bg-white"
+            : "border-gray-300 shadow-indigo-400/30 bg-white h-full"
         } `}
       >
         <div className="flex justify-between items-center">
@@ -93,7 +93,7 @@ const Revenue = () => {
           </button>
         </div>
         <div>
-          <Bar data={data} options={options} width={500} height={200}></Bar>
+          <Bar data={data} options={options} width={500}></Bar>
         </div>
       </div>
     </>

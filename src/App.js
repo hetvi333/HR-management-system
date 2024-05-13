@@ -6,7 +6,7 @@ import { ThemeContext } from "./contexts/ThemeContext";
 function App() {
   const { toggle } = useContext(ThemeContext);
   return (
-    <div className={`${toggle ? "bg-[#111417]" : "bg-indigo-100"}`}>
+    <div className={`font-serif ${toggle ? "bg-[#111417]" : "bg-indigo-100"}`}>
       <AppRoutes />
     </div>
   );

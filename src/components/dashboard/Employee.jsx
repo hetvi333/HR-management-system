@@ -68,11 +68,11 @@ const Employee = () => {
               }`}
             >
               <div>
-                <h1 className="text-[16px]">{emp.branch}</h1>
+                <h1 className="text-[16px] font-semibold">{emp.branch}</h1>
                 <p
                   className={`${
                     toggle ? "text-indigo-300" : "text-indigo-600"
-                  } text-[16px] sm:text-[18px] font-semibold`}
+                  } text-[16px] sm:text-[18px] font-medium`}
                 >
                   Team member: {emp.number}
                 </p>
